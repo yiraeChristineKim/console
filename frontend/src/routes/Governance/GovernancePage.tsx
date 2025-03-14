@@ -39,6 +39,9 @@ export default function GovernancePage() {
               <AcmSecondaryNavItem isActive={location.pathname.startsWith(NavigationPath.discoveredPolicies)}>
                 <Link to={NavigationPath.discoveredPolicies}>{t('Discovered policies')}</Link>
               </AcmSecondaryNavItem>
+              <AcmSecondaryNavItem isActive={location.pathname.startsWith(NavigationPath.dryrun)}>
+                <Link to={NavigationPath.dryrun}>{t('Policy Dryrun')}</Link>
+              </AcmSecondaryNavItem>
             </AcmSecondaryNav>
           }
           actions={actions}

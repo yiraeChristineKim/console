@@ -1,0 +1,10 @@
+.pf-v5-svg {
+    color: var(--pf-v5-global--Color--200)
+}
+
+.code-content {
+    background-color: #3c3c3c;
+    color: white;
+    white-space: pre-wrap;
+    font-size: 14px;
+}

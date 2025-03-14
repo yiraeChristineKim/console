@@ -20,6 +20,7 @@ import DiscoveredByClusterPage from './discovered/ByCluster/DiscoveredByClusterP
 import PolicyTemplateYaml from './policies/policy-details/PolicyTemplateYaml'
 import { PolicyTemplateDetailsPage } from './policies/policy-details/PolicyTemplateDetail/PolicyTemplateDetailsPage'
 import { PolicyTemplateDetails } from './policies/policy-details/PolicyTemplateDetail/PolicyTemplateDetails'
+import Dryrun from './dryrun/Dryrun'
 
 const governanceChildPath = createRoutePathFunction(NavigationPath.governance)
 
@@ -49,6 +50,7 @@ export default function Governance() {
         <Route path={governanceChildPath(NavigationPath.policySets)} element={<PolicySetsPage />} />
         <Route path={governanceChildPath(NavigationPath.policies)} element={<PoliciesPage />} />
         <Route path={governanceChildPath(NavigationPath.discoveredPolicies)} element={<DiscoveredPolicies />} />
+        <Route path={governanceChildPath(NavigationPath.dryrun)} element={<Dryrun />} />
       </Route>
     </Routes>
   )

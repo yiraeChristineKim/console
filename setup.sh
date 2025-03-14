@@ -102,5 +102,25 @@ EOF
   echo SEARCH_API_URL=$SEARCH_API_URL >> ./backend/.env
 fi
 
+# Create route to the GRC dryrun service on the target cluster.
+# if [[ -n "$INSTALLATION_NAMESPACE" ]]; then
+#   oc apply -f - << EOF
+# apiVersion: route.openshift.io/v1
+# kind: Route
+# metadata:
+#   name: dryrun-service
+#   namespace: $INSTALLATION_NAMESPACE
+# spec:
+#   to:
+#     kind: Service
+#     name: propagator-dryrun-service
+#   tls:
+#     termination: reencrypt
+#     insecureEdgeTerminationPolicy: Redirect
+# EOF
+#   GRC_DRYRUN_API_URL=https://$(oc get route search-api -n $INSTALLATION_NAMESPACE -o="jsonpath={.status.ingress[0].host}")
+#   echo GRC_DRYRUN_API_URL=$GRC_DRYRUN_API_URL >> ./backend/.env
+# fi
+
 CLUSTER_PROXY_ADDON_USER_ROUTE=https://$(oc get route cluster-proxy-addon-user -n $INSTALLATION_NAMESPACE_MCE -o="jsonpath={.status.ingress[0].host}")
 echo CLUSTER_PROXY_ADDON_USER_ROUTE=$CLUSTER_PROXY_ADDON_USER_ROUTE >> ./backend/.env
